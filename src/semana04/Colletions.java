@@ -1,7 +1,7 @@
 package semana04;
 
 import java.util.ArrayList;
-import java.util.List;
+//import java.util.List;
 import javax.swing.JOptionPane;
 
 public class Colletions {

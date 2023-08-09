@@ -11,7 +11,6 @@ O programa deve no final emitir uma classificação sobre a participação da pe
     3 e 4 = cúmplice
     5 como = "assassino". 
     Caso contrário é classificado como inocente.
-   
 */
 package semana04;
 
@@ -22,8 +21,8 @@ import javax.swing.JOptionPane;
 public class list_arrays {
       public static void main(String[] args) {
           //parImpar(); //exercicio 1
-          // temperaturaMed(); //exercicio 2
-          investigacao(); //exercicio 3
+           temperaturaMed(); //exercicio 2
+         // investigacao(); //exercicio 3
       }
       static void parImpar(){
           ArrayList numPares = new ArrayList<>();
@@ -45,9 +44,9 @@ public class list_arrays {
       }
       
       static void temperaturaMed(){
-          ArrayList temperaturas = new ArrayList<>();
+          ArrayList <Double> temperaturas = new ArrayList<>();
           ArrayList mes = new ArrayList<>();
-          int num = 0;
+          double num = 0.0;
           
           mes.add("Janeiro: ");
           mes.add("Fevereiro: ");
@@ -65,12 +64,13 @@ public class list_arrays {
           for(int i = 1; i <= 12; i++){
             String temp = JOptionPane.showInputDialog(null, "Qual foi a temperatura média do "+i+"º mês?");            
              num += Integer.parseInt(temp);
-             temperaturas.add(Integer.parseInt(temp));
+             temperaturas.add(Double.parseDouble(temp));
           }
-          int mediaAnual = num/12;
+          double mediaAnual = num/12;
           for(int i =0; i < temperaturas.size(); i++){
-              if(mediaAnual < (int) temperaturas.get(i)){
-                JOptionPane.showMessageDialog(null, "Temperatura acima da média anual em "+mes.get(i)+" com média de "+ temperaturas.get(i));
+              if(mediaAnual < (Double) temperaturas.get(i)){
+                JOptionPane.showMessageDialog(null, "Temperatura acima da média anual em "+mes.get(i)+" com média de "+ temperaturas.get(i) +"\n"
+                                                                                            +"Média anual: "+ mediaAnual );
               }
           }  
          JOptionPane.showConfirmDialog(null, "Médias cadastradas com sucesso!");
